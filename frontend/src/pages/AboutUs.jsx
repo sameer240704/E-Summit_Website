@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image1 from "../assets/events/img1.jpg";
-import Image2 from "../assets/events/img27.jpg";
-import Image3 from "../assets/events/img34.jpg";
+import Image2 from "../assets/events/img5.jpg";
+import Image3 from "../assets/events/img10.jpg";
 
 const AboutUs = () => {
   const [currentButton, setCurrentButton] = useState("Empowering Innovation");

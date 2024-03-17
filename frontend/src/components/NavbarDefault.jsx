@@ -18,6 +18,10 @@ const NavbarDefault = () => {
       href: '#events' 
     },
     { 
+      label: 'Gallery', 
+      href: '#gallery' 
+    },
+    { 
       label: 'Our Speakers', 
       href: '#our-speakers' 
     },
@@ -72,7 +76,7 @@ const NavbarDefault = () => {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[10000000] mx-auto w-full max-w-screen-md bg-ESummitBlue-900 py-5 shadow-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg text-white">
+    <header className="fixed inset-x-0 top-0 z-[1000] mx-auto w-full max-w-screen-md bg-ESummitBlue-900 py-5 shadow-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg text-white">
       <div className="px-4 flex justify-between items-center">
         <img src={Logo} alt="Logo" className="h-5 md:h-10" />
         <nav className="hidden md:flex md:items-center md:justify-center md:gap-5">

@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavbarDefault from "./components/NavbarDefault";
-import { Home, Events, AboutUs, Speakers, ContactUs } from "./pages/index.jsx";
+import { Home, Events, Gallery, AboutUs, Speakers, ContactUs } from "./pages/index.jsx";
 import { Toaster } from "react-hot-toast";
-import "./App.css"
+import Footer from "./components/Footer.jsx";
+import "./App.css";
 
 function App() {
 
@@ -12,8 +13,10 @@ function App() {
       <Home />
       <AboutUs />
       <Events />
+      <Gallery />
       <Speakers />
       <ContactUs />
+      <Footer />
       <Toaster 
         position="top-center"
         reverseOrder="true"
