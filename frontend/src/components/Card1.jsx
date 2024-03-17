@@ -8,10 +8,12 @@ import { MdOutlineNotStarted } from "react-icons/md";
 import { IoIosPerson } from "react-icons/io";
 import { GiTrophy } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
+import Register1 from './Register1';
 
 const Card1 = () => {
 
     const [ detailsClicked, setDetailsClicked ] = useState(false);
+    const [ registerOpen, setRegisterOpen ] = useState(false);
 
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -19,6 +21,8 @@ const Card1 = () => {
     const rotateY = useTransform(x, [-100, 100], [-30, 30]);
 
     const handleDetailsChange = () => setDetailsClicked(!detailsClicked);
+
+    const handleRegisterChange = () => setRegisterOpen(!registerOpen);
 
     return (
         <>
@@ -55,7 +59,12 @@ const Card1 = () => {
                         </button>
                     </div>
                     <div className='register'>
-                        <button className='register-btn p-2 rounded-xl active:scale-90'>Register</button>
+                        <button 
+                            className='register-btn p-2 rounded-xl active:scale-90'
+                            onClick={handleRegisterChange}
+                        >
+                            Register
+                        </button>
                     </div>
                     <motion.div
                         className='absolute top-[200px] -right-[130px]'
@@ -119,6 +128,12 @@ const Card1 = () => {
                     </VerticalTimeline>
                 </div>
             )}
+            { registerOpen && (
+                <Register1 
+                    registerOpen={registerOpen} 
+                    setRegisterOpen={setRegisterOpen} 
+                />)
+            }
         </>
     )
 }
