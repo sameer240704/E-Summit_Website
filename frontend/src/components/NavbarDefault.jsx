@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import Logo from "../assets/IIC_logo.png";
 
 const NavbarDefault = () => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const navbarData = [
     { 
       label: 'Home', 
@@ -21,7 +23,7 @@ const NavbarDefault = () => {
     },
     { 
       label: 'Our Speakers', 
-      href: '#speakers' 
+      href: '#our-speakers' 
     },
     { 
       label: 'Contact Us', 
@@ -60,7 +62,6 @@ const NavbarDefault = () => {
   }, [location, navbarData]);
 
   useEffect(() => {
-    // Dynamically generate refs for sections
     navbarData.forEach(item => {
       sectionRefs.current[item.label] = React.createRef();
     });
@@ -75,23 +76,22 @@ const NavbarDefault = () => {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-30 mx-auto h-18 w-full max-w-screen-md bg-ESummitBlue-900 py-3 shadow-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg text-white">
-      <div className="px-4 flex justify-center items-center">
-        <div className="flex items-center justify-center md:justify-between">
-          <nav className="hidden md:flex md:items-center md:justify-center md:gap-5">
-            {navbarData.map((item, index) => (
-              <a
-                key={index}
-                aria-current="page"
-                className={`inline-block rounded-lg px-2 py-1 text-md font-medium transition-all duration-200 ${selectedItem === index ? 'text-white font-bold text-xl' : 'text-white'}`}
-                href={item.href}
-                onClick={() => handleItemClick(index)}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
+    <header className="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md bg-ESummitBlue-900 py-5 shadow-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg text-white">
+      <div className="px-4 flex justify-between items-center">
+        <img src={Logo} alt="Logo" className="h-5 md:h-10" />
+        <nav className="hidden md:flex md:items-center md:justify-center md:gap-5">
+          {navbarData.map((item, index) => (
+            <a
+              key={index}
+              aria-current="page"
+              className={`inline-block rounded-lg px-2 py-1 text-md font-medium transition-all duration-200 ${selectedItem === index ? 'text-white font-bold text-xl' : 'text-white opacity-50 hover:text-slate-600'}`}
+              href={item.href}
+              onClick={() => handleItemClick(index)}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
       </div>
       <div className="hidden">
         {navbarData.map((item, index) => (

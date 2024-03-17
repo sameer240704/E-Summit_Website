@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Polygon from "../assets/polygon.png";
+import { useState } from 'react';
+import Polygon from "../assets/polygon2.png";
 import { useMotionValue, useTransform, motion } from "framer-motion";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -9,8 +9,7 @@ import { IoIosPerson } from "react-icons/io";
 import { GiTrophy } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 
-const Card1 = () => {
-
+const Card2 = () => {
     const [ detailsClicked, setDetailsClicked ] = useState(false);
 
     const x = useMotionValue(0);
@@ -41,7 +40,7 @@ const Card1 = () => {
                     whileTap={{ cursor: 'grabbing' }}
                 >
                     <div className='title text-3xl text-white font-extrabold'>
-                        <h1>RUSH HOUR</h1>
+                        <h1>PLANNERED</h1>
                     </div>
                     <div className='about text-sm my-7 text-white'>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum temporibus commodi accusamus suscipit? Dolores praesentium tenetur aliquid unde dignissimos dolore aspernatur eos beatae, obcaecati totam delectus exercitationem expedita. Facere, commodi?</p>
@@ -49,7 +48,7 @@ const Card1 = () => {
                     <div className='details'>
                         <button 
                             className='details-btn p-2 rounded-xl active:scale-90 mb-3'
-                            onClick={handleDetailsChange}    
+                            onClick={handleDetailsChange}
                         >
                             Details
                         </button>
@@ -64,7 +63,7 @@ const Card1 = () => {
                         <img
                             src={Polygon}
                             alt='Polygon image'
-                            className='h-[300px]'
+                            className='h-[320px]'
                             draggable="false"
                         />
                     </motion.div>
@@ -123,4 +122,4 @@ const Card1 = () => {
     )
 }
 
-export default Card1;
+export default Card2;
