@@ -37,6 +37,7 @@ const Gallery = () => {
                 slidesPerView={3}
                 centeredSlides
                 effect={"coverflow"}
+                loop={true}
                 coverflowEffect={{
                     rotate: 50,
                     stretch: 0,
